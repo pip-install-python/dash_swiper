@@ -63,8 +63,8 @@ class DashSwiper extends Component {
                         <div key={index} className="swiper-slide" style={{height: '100%'}}>
                             <a href={slide.link} target="_blank" rel="noopener noreferrer" style={{'color': 'white'}}>
                                 <img className='swiper-gl-image' src={slide.src} alt={slide.alt} style={{height: '100%'}}/>
-                                <div className="swiper-slide-content">
-                                    <div className="swiper-slide-title">{slide.title}</div>
+                                <div className="swiper-slide-content" style={{position: 'absolute', left: '32px', bottom: '32px', maxWidth: 'calc(100% - 64px);', color:'white'}}>
+                                    <div className="swiper-slide-title" style={{fontSize: '32px', fontWeight: 'bold', lineHeight: 1.25, textShadow: '0px 0px 5px rgba(0,0,0,.25)'}}>{slide.title}</div>
                                 </div>
                             </a>
                         </div>
