@@ -1,0 +1,35 @@
+{
+  "name": "shaders-slider",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite ./demo-vite",
+    "build": "vite build ./demo-vite",
+    "build-dist": "node ./build/build",
+    "build-vite": "vite build ./demo-vite",
+    "build-static": "node ./build/build-demo-static",
+    "build-all": "npm run build-vite && npm run build-dist && npm run build-static",
+    "serve": "vite preview ./demo-vite",
+    "lint": "eslint --ext .js ."
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "clean-css": "^5.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2",
+    "rollup": "^2.70.2",
+    "sass": "^1.69.4",
+    "terser": "^5.18.2",
+    "vite": "^2.5.0"
+  },
+  "dependencies": {
+    "ogl": "^0.0.97",
+    "simplex-noise": "^4.0.0",
+    "swiper": "^11.0.2"
+  }
+}

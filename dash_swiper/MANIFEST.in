@@ -1,0 +1,11 @@
+include dash_swiper/dash_swiper.min.js
+include dash_swiper/dash_swiper.min.js.map
+include dash_swiper/async-*.js
+include dash_swiper/async-*.js.map
+include dash_swiper/*-shared.js
+include dash_swiper/*-shared.js.map
+include dash_swiper/metadata.json
+include dash_swiper/package-info.json
+include README.md
+include LICENSE
+include package.json

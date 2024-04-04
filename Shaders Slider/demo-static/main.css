@@ -1,0 +1,111 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  line-height: 1.5;
+  font-family: -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:root {
+  --swiper-navigation-color: #fff;
+  --swiper-pagination-color: #fff;
+  --swiper-pagination-bullet-inactive-color: #fff;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide-content {
+  position: absolute;
+  left: 32px;
+  bottom: 32px;
+  max-width: calc(100% - 64px);
+}
+
+.swiper-slide-title {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.25;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+.demo-shader-picker {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.demo-shader-selector {
+  display: flex;
+  align-items: center;
+  color: rgb(0, 128, 255);
+  background: rgb(40, 40, 40);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.demo-shader-selector span {
+  color: #fff;
+  margin-right: 4px;
+}
+.demo-shader-selector svg {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 1px;
+  margin-left: 2px;
+}
+.demo-shader-selector:hover {
+  background: rgb(45, 45, 45);
+}
+
+.demo-shader-current {
+  font-family: Monaco, Menlo, monospace;
+}
+
+.demo-shader-options {
+  position: absolute;
+  text-align: right;
+  right: 8px;
+  top: 8px;
+  background: rgb(50, 50, 50);
+  border-radius: 4px;
+  display: none;
+  white-space: nowrap;
+  line-height: 1;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: Monaco, Menlo, monospace;
+}
+.demo-shader-options span {
+  display: block;
+  padding: 8px 16px;
+}
+.demo-shader-options span + span {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.demo-shader-options span:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #0080ff;
+}

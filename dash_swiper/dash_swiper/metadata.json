@@ -1,0 +1,192 @@
+{
+  "src/lib/components/DashSwiper.react.js": {
+    "description": "",
+    "displayName": "DashSwiper",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "loop": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "shader": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'random'",
+          "computed": false
+        }
+      },
+      "speed": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "1000",
+          "computed": false
+        }
+      },
+      "autoplay": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "delay": {
+              "name": "number",
+              "required": false
+            },
+            "disableOnInteraction": {
+              "name": "bool",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{\n    delay: 2500,\n    disableOnInteraction: false,\n}",
+          "computed": false
+        }
+      },
+      "slides": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "src": {
+                "name": "string",
+                "required": true
+              },
+              "alt": {
+                "name": "string",
+                "required": false
+              },
+              "title": {
+                "name": "string",
+                "required": false
+              },
+              "link": {
+                "name": "string",
+                "required": false
+              }
+            }
+          }
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "navigation": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "prevEl": {
+              "name": "string",
+              "required": false
+            },
+            "nextEl": {
+              "name": "string",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{\n    prevEl: '.swiper-button-prev',\n    nextEl: '.swiper-button-next',\n}",
+          "computed": false
+        }
+      },
+      "pagination": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "el": {
+              "name": "string",
+              "required": false
+            },
+            "clickable": {
+              "name": "bool",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{\n    el: '.swiper-pagination',\n    clickable: true,\n}",
+          "computed": false
+        }
+      },
+      "nextButton": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "prevButton": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "swiperOptions": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  }
+}
