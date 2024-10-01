@@ -210,6 +210,17 @@
           "value": "''",
           "computed": false
         }
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom inline styles to be applied to the carousel container.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },

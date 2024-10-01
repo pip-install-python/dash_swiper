@@ -1,6 +1,6 @@
 Package: dashSwiper
 Title: swiper for dash
-Version: 0.0.2
+Version: 0.0.3
 Description: swiper for dash
 Depends: R (>= 3.0.2)
 Imports: 

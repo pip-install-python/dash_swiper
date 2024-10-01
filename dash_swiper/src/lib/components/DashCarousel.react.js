@@ -10,84 +10,53 @@ import '../building_blocks/dist/effect-carousel.min.css';
 
 // Integrated styles
 const styles = `
-html, body {
-  position: relative;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #18212b;
-  color: #fff;
-  line-height: 1.5;
-  font-family: -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, "Segoe UI", Roboto, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-:root {
-  --swiper-navigation-color: #fff;
-  --swiper-pagination-color: #fff;
-  --swiper-pagination-bullet-inactive-color: #fff;
-}
-
 .swiper-carousel {
-  padding-bottom: 32px;
-  max-width: 1200px;
+  width: 100%;
+  height: 100%;
 }
 
 .swiper-carousel .swiper-slide {
-  width: 520px;
-  height: 380px;
-  border-radius: 8px;
-  background: #18212b;
-  max-width: calc(100% - 48px);
-}
-
-.swiper-carousel .swiper-carousel-animate-opacity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 100%;
 }
 
-.swiper-carousel .swiper-pagination-bullets {
-  bottom: 0;
+.swiper-carousel .swiper-carousel-animate-opacity {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .swiper-carousel img {
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: cover;
-  border-radius: 8px;
 }
 
 .swiper-carousel .slide-content {
   position: absolute;
   left: 0;
-  width: 100%;
+  right: 0;
   bottom: 0;
-  padding: 88px 16px 24px;
-  box-sizing: border-box;
+  padding: 1rem;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
-  border-radius: 0 0 8px 8px;
+  color: white;
 }
 
 .swiper-carousel .slide-content h2 {
   margin: 0;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 1.1;
+  font-size: 1.5rem;
+  line-height: 1.2;
 }
 
 .swiper-carousel .slide-content p {
-  margin: 8px 0 0;
-  opacity: 0.65;
-  font-size: 14px;
-  font-weight: 500;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  opacity: 0.8;
 }
 
 @media (max-width: 640px) {
@@ -97,7 +66,6 @@ body {
   }
 }
 `;
-
 
 /**
  * DashCarousel is a component that creates an interactive carousel/slider
@@ -118,7 +86,8 @@ const DashCarousel = (props) => {
         grabCursor,
         slidesPerView,
         swiperOptions,
-        setProps
+        setProps,
+        style
     } = props;
 
     const swiperRef = useRef(null);
@@ -232,13 +201,19 @@ const DashCarousel = (props) => {
     // eslint-disable-next-line no-magic-numbers
     const slideWidth = `calc((100% - ${(slidesPerView - 1) * 30}px) / ${slidesPerView})`;
 
+    const containerStyle = {
+        width: '100%',
+        height: '100%',
+        ...style
+    };
+
     return (
         <>
             <style>{styles}</style>
-            <div id={id} className={`swiper-carousel ${className}`} ref={swiperRef}>
+            <div id={id} className={`swiper-carousel ${className}`} ref={swiperRef} style={containerStyle}>
                 <div className="swiper-wrapper">
                     {slides.map((slide, index) => (
-                        <div key={index} className="swiper-slide" style={{ width: slideWidth }}>
+                        <div key={index} className="swiper-slide">
                             <div className="swiper-carousel-animate-opacity">
                                 <img src={slide.src} alt={slide.alt} />
                                 <div className="slide-content">
@@ -260,6 +235,7 @@ const DashCarousel = (props) => {
         </>
     );
 };
+
 
 DashCarousel.propTypes = {
     /**
@@ -366,7 +342,12 @@ DashCarousel.propTypes = {
     /**
      * The alt text of the currently active slide.
      */
-    activeSlideAlt: PropTypes.string
+    activeSlideAlt: PropTypes.string,
+
+    /**
+     * Custom inline styles to be applied to the carousel container.
+     */
+    style: PropTypes.object,
 };
 
 DashCarousel.defaultProps = {
@@ -389,7 +370,8 @@ DashCarousel.defaultProps = {
     slidesPerView: 3,
     swiperOptions: {},
     activeIndex: 0,
-    activeSlideAlt: ''
+    activeSlideAlt: '',
+    style: {},
 };
 
 export default DashCarousel;
