@@ -1,6 +1,6 @@
 {
   "name": "dash_swiper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "swiper for dash",
   "repository": {
     "type": "git",
@@ -41,7 +41,8 @@
     "simplex-noise": "^4.0.0",
     "terser": "^5.18.2",
     "vite": "^2.5.0",
-    "webpack-glsl-loader": "^1.0.1"
+    "webpack-glsl-loader": "^1.0.1",
+    "swiper": "^11.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.22.1",

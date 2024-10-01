@@ -1,4 +1,6 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+export(DashCarousel)
 export(DashSwiper)
 export(dashSwiper)
+export(dashCarousel)

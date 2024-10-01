@@ -3,8 +3,9 @@ module DashSwiper
 using Dash
 
 const resources_path = realpath(joinpath( @__DIR__, "..", "deps"))
-const version = "0.0.1"
+const version = "0.0.2"
 
+include("jl/dashcarousel.jl")
 include("jl/dashswiper.jl")
 
 function __init__()

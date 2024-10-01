@@ -7,7 +7,11 @@ import 'swiper/css/navigation';
 import SwiperGL from '../building_blocks/demo-vite/swiper-gl.esm.js';
 import '../building_blocks/demo-vite/swiper-gl.scss';
 
-
+/**
+ * DashSwiper is a component that creates an interactive swiper/slider
+ * using Swiper.js with WebGL effects. It supports features like autoplay,
+ * navigation, pagination, and custom shaders.
+ */
 class DashSwiper extends Component {
     constructor(props) {
         super(props);
@@ -25,7 +29,7 @@ class DashSwiper extends Component {
                 loop,
                 speed,
                 gl: {
-                    shader,
+                   shader: shader,
                 },
                 navigation,
                 pagination,
@@ -79,14 +83,44 @@ class DashSwiper extends Component {
 }
 
 DashSwiper.propTypes = {
+    /**
+     * The ID used to identify this component in Dash callbacks.
+     */
     id: PropTypes.string,
+
+    /**
+     * If true, enables continuous loop mode.
+     */
     loop: PropTypes.bool,
-    shader: PropTypes.string,
+
+    /**
+     * An array of shader names to be used for the WebGL effect.
+     */
+    shader: PropTypes.arrayOf(PropTypes.string),
+
+    /**
+     * The transition speed between slides in milliseconds.
+     */
     speed: PropTypes.number,
+
+    /**
+     * Configuration object for autoplay behavior.
+     */
     autoplay: PropTypes.shape({
-            delay: PropTypes.number,
-            disableOnInteraction: PropTypes.bool,
-        }),
+        /**
+         * Delay between transitions (in ms).
+         */
+        delay: PropTypes.number,
+        /**
+         * Whether to stop autoplay on user interaction.
+         */
+        disableOnInteraction: PropTypes.bool,
+    }),
+
+    /**
+     * An array of objects representing the slides in the swiper.
+     * Each object should have src, alt, title, and link properties.
+     */
     slides: PropTypes.arrayOf(
         PropTypes.shape({
             src: PropTypes.string.isRequired,
@@ -95,24 +129,60 @@ DashSwiper.propTypes = {
             link: PropTypes.string
         })
     ),
+
+    /**
+     * Additional CSS class for the root element.
+     */
     className: PropTypes.string,
+
+    /**
+     * Configuration object for navigation.
+     */
     navigation: PropTypes.shape({
+        /**
+         * CSS selector or HTML element of the previous button.
+         */
         prevEl: PropTypes.string,
+        /**
+         * CSS selector or HTML element of the next button.
+         */
         nextEl: PropTypes.string,
     }),
+
+    /**
+     * Configuration object for pagination.
+     */
     pagination: PropTypes.shape({
+        /**
+         * CSS selector or HTML element of the pagination container.
+         */
         el: PropTypes.string,
+        /**
+         * If true, pagination bullets will be clickable.
+         */
         clickable: PropTypes.bool,
     }),
+
+    /**
+     * If true, displays the next navigation button.
+     */
     nextButton: PropTypes.bool,
+
+    /**
+     * If true, displays the previous navigation button.
+     */
     prevButton: PropTypes.bool,
+
+    /**
+     * Additional options to pass directly to Swiper instance.
+     */
     swiperOptions: PropTypes.object,
 };
 
 DashSwiper.defaultProps = {
     id: null,
     loop: false,
-    shader: 'random',
+    shader: ['random'],
     speed: 1000,
      navigation: {
         prevEl: '.swiper-button-prev',

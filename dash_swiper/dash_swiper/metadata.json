@@ -1,6 +1,220 @@
 {
+  "src/lib/components/DashCarousel.react.js": {
+    "description": "DashCarousel is a component that creates an interactive carousel/slider\nusing Swiper.js. It supports various features like autoplay, navigation,\npagination, and custom effects.",
+    "displayName": "DashCarousel",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID used to identify this component in Dash callbacks.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "slides": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "src": {
+                "name": "string",
+                "required": true
+              },
+              "alt": {
+                "name": "string",
+                "required": false
+              },
+              "title": {
+                "name": "string",
+                "required": false
+              },
+              "description": {
+                "name": "string",
+                "required": false
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "An array of objects representing the slides in the carousel.\nEach object should have src, alt, title, and description properties."
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Additional CSS class for the root element.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "carouselEffect": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "opacityStep": {
+              "name": "number",
+              "description": "Step value for opacity change between slides.",
+              "required": false
+            },
+            "scaleStep": {
+              "name": "number",
+              "description": "Step value for scale change between slides.",
+              "required": false
+            },
+            "sideSlides": {
+              "name": "number",
+              "description": "Number of side slides visible.",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "Configuration object for the carousel effect.",
+        "defaultValue": {
+          "value": "{\n    opacityStep: 0.33,\n    scaleStep: 0.2,\n    sideSlides: 2\n}",
+          "computed": false
+        }
+      },
+      "navigation": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Whether to display navigation buttons.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "pagination": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Whether to display pagination dots.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "autoplayEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Whether autoplay is enabled.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "autoplay": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "delay": {
+              "name": "number",
+              "description": "Delay between transitions (in ms).",
+              "required": false
+            },
+            "disableOnInteraction": {
+              "name": "bool",
+              "description": "Whether to pause autoplay on user interaction.",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "Configuration object for autoplay behavior.",
+        "defaultValue": {
+          "value": "{\n    delay: 3000,\n    disableOnInteraction: false\n}",
+          "computed": false
+        }
+      },
+      "loop": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Whether to enable continuous loop mode.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "grabCursor": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Whether to change the cursor to \"grab\" while swiping.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "slidesPerView": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Number of slides per view.",
+        "defaultValue": {
+          "value": "3",
+          "computed": false
+        }
+      },
+      "swiperOptions": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Additional options to pass directly to Swiper instance.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+      },
+      "activeIndex": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The index of the currently active slide.",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "activeSlideAlt": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The alt text of the currently active slide.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/lib/components/DashSwiper.react.js": {
-    "description": "",
+    "description": "DashSwiper is a component that creates an interactive swiper/slider\nusing Swiper.js with WebGL effects. It supports features like autoplay,\nnavigation, pagination, and custom shaders.",
     "displayName": "DashSwiper",
     "methods": [],
     "props": {
@@ -9,7 +223,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "The ID used to identify this component in Dash callbacks.",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -20,7 +234,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "",
+        "description": "If true, enables continuous loop mode.",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -28,12 +242,15 @@
       },
       "shader": {
         "type": {
-          "name": "string"
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
         },
         "required": false,
-        "description": "",
+        "description": "An array of shader names to be used for the WebGL effect.",
         "defaultValue": {
-          "value": "'random'",
+          "value": "['random']",
           "computed": false
         }
       },
@@ -42,7 +259,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "",
+        "description": "The transition speed between slides in milliseconds.",
         "defaultValue": {
           "value": "1000",
           "computed": false
@@ -54,16 +271,18 @@
           "value": {
             "delay": {
               "name": "number",
+              "description": "Delay between transitions (in ms).",
               "required": false
             },
             "disableOnInteraction": {
               "name": "bool",
+              "description": "Whether to stop autoplay on user interaction.",
               "required": false
             }
           }
         },
         "required": false,
-        "description": "",
+        "description": "Configuration object for autoplay behavior.",
         "defaultValue": {
           "value": "{\n    delay: 2500,\n    disableOnInteraction: false,\n}",
           "computed": false
@@ -95,7 +314,7 @@
           }
         },
         "required": false,
-        "description": "",
+        "description": "An array of objects representing the slides in the swiper.\nEach object should have src, alt, title, and link properties.",
         "defaultValue": {
           "value": "[]",
           "computed": false
@@ -106,7 +325,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "Additional CSS class for the root element.",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -118,16 +337,18 @@
           "value": {
             "prevEl": {
               "name": "string",
+              "description": "CSS selector or HTML element of the previous button.",
               "required": false
             },
             "nextEl": {
               "name": "string",
+              "description": "CSS selector or HTML element of the next button.",
               "required": false
             }
           }
         },
         "required": false,
-        "description": "",
+        "description": "Configuration object for navigation.",
         "defaultValue": {
           "value": "{\n    prevEl: '.swiper-button-prev',\n    nextEl: '.swiper-button-next',\n}",
           "computed": false
@@ -139,16 +360,18 @@
           "value": {
             "el": {
               "name": "string",
+              "description": "CSS selector or HTML element of the pagination container.",
               "required": false
             },
             "clickable": {
               "name": "bool",
+              "description": "If true, pagination bullets will be clickable.",
               "required": false
             }
           }
         },
         "required": false,
-        "description": "",
+        "description": "Configuration object for pagination.",
         "defaultValue": {
           "value": "{\n    el: '.swiper-pagination',\n    clickable: true,\n}",
           "computed": false
@@ -159,7 +382,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "",
+        "description": "If true, displays the next navigation button.",
         "defaultValue": {
           "value": "true",
           "computed": false
@@ -170,7 +393,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "",
+        "description": "If true, displays the previous navigation button.",
         "defaultValue": {
           "value": "true",
           "computed": false
@@ -181,7 +404,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "",
+        "description": "Additional options to pass directly to Swiper instance.",
         "defaultValue": {
           "value": "{}",
           "computed": false

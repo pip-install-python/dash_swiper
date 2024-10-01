@@ -5,47 +5,66 @@ from dash.development.base_component import Component, _explicitize_args
 
 class DashSwiper(Component):
     """A DashSwiper component.
-
+DashSwiper is a component that creates an interactive swiper/slider
+using Swiper.js with WebGL effects. It supports features like autoplay,
+navigation, pagination, and custom shaders.
 
 Keyword arguments:
 
-- id (string; optional)
+- id (string; optional):
+    The ID used to identify this component in Dash callbacks.
 
-- autoplay (dict; default {    delay: 2500,    disableOnInteraction: False,})
+- autoplay (dict; default {    delay: 2500,    disableOnInteraction: False,}):
+    Configuration object for autoplay behavior.
 
     `autoplay` is a dict with keys:
 
-    - delay (number; optional)
+    - delay (number; optional):
+        Delay between transitions (in ms).
 
-    - disableOnInteraction (boolean; optional)
+    - disableOnInteraction (boolean; optional):
+        Whether to stop autoplay on user interaction.
 
-- className (string; optional)
+- className (string; optional):
+    Additional CSS class for the root element.
 
-- loop (boolean; default False)
+- loop (boolean; default False):
+    If True, enables continuous loop mode.
 
-- navigation (dict; default {    prevEl: '.swiper-button-prev',    nextEl: '.swiper-button-next',})
+- navigation (dict; default {    prevEl: '.swiper-button-prev',    nextEl: '.swiper-button-next',}):
+    Configuration object for navigation.
 
     `navigation` is a dict with keys:
 
-    - nextEl (string; optional)
+    - nextEl (string; optional):
+        CSS selector or HTML element of the next button.
 
-    - prevEl (string; optional)
+    - prevEl (string; optional):
+        CSS selector or HTML element of the previous button.
 
-- nextButton (boolean; default True)
+- nextButton (boolean; default True):
+    If True, displays the next navigation button.
 
-- pagination (dict; default {    el: '.swiper-pagination',    clickable: True,})
+- pagination (dict; default {    el: '.swiper-pagination',    clickable: True,}):
+    Configuration object for pagination.
 
     `pagination` is a dict with keys:
 
-    - clickable (boolean; optional)
+    - clickable (boolean; optional):
+        If True, pagination bullets will be clickable.
 
-    - el (string; optional)
+    - el (string; optional):
+        CSS selector or HTML element of the pagination container.
 
-- prevButton (boolean; default True)
+- prevButton (boolean; default True):
+    If True, displays the previous navigation button.
 
-- shader (string; default 'random')
+- shader (list of strings; default ['random']):
+    An array of shader names to be used for the WebGL effect.
 
-- slides (list of dicts; optional)
+- slides (list of dicts; optional):
+    An array of objects representing the slides in the swiper. Each
+    object should have src, alt, title, and link properties.
 
     `slides` is a list of dicts with keys:
 
@@ -57,9 +76,11 @@ Keyword arguments:
 
     - title (string; optional)
 
-- speed (number; default 1000)
+- speed (number; default 1000):
+    The transition speed between slides in milliseconds.
 
-- swiperOptions (dict; optional)"""
+- swiperOptions (dict; optional):
+    Additional options to pass directly to Swiper instance."""
     _children_props = []
     _base_nodes = ['children']
     _namespace = 'dash_swiper'
